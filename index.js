@@ -11,13 +11,13 @@ const app = express()
 mongoose.connect('mongodb://isen:dwes@mongo:27017/miapp?authSource=admin')
 
 app.get('/', async (_req, res) => {
-  console.log('listando... animales...')
+  console.log('Hola, esta es la practica de Jorge')
   const animales = await Animal.find(); //busca a todos los animales en base de datos y los devuelve
   return res.send(animales)
 })
 app.get('/crear', async (_req, res) => {
   console.log('creando...')
-  await Animal.create({ tipo: 'gato', estado: 'Feliz' }) //crea un animal el cual va a ser tipo ANIMAL y su estado va a ser FELIZ, y luego nos devuelve un OK
+  await Animal.create({ tipo: 'Jorge', estado: 'Feliz' }) //crea un animal el cual va a ser tipo ANIMAL y su estado va a ser FELIZ, y luego nos devuelve un OK
   return res.send('ok')
 })
 
